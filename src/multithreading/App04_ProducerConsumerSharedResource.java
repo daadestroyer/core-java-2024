@@ -33,7 +33,7 @@ class SharedResource {
     }
 }
 
-public class ProducerConsumerSharedResource {
+public class App04_ProducerConsumerSharedResource {
     public static void main(String[] args) {
         SharedResource sharedResource = new SharedResource(3);
 
