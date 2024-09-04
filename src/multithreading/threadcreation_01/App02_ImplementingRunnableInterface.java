@@ -1,4 +1,4 @@
-package multithreading.threadcreation;
+package multithreading.threadcreation_01;
 
 class MeraThread implements Runnable{
     @Override
@@ -6,7 +6,7 @@ class MeraThread implements Runnable{
         System.out.println("Run hora hai "+Thread.currentThread().getName());
     }
 }
-public class ImplementingRunnableInterface {
+public class App02_ImplementingRunnableInterface {
     public static void main(String[] args) {
         int noOfThreads = 5;
         for(int i=1 ; i<= noOfThreads ; i++){

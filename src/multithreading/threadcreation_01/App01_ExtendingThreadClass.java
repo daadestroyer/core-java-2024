@@ -1,4 +1,4 @@
-package multithreading.threadcreation;
+package multithreading.threadcreation_01;
 
 class MyThread extends Thread {
     @Override
@@ -7,7 +7,7 @@ class MyThread extends Thread {
     }
 }
 
-public class ExtendingThreadClass {
+public class App01_ExtendingThreadClass {
     public static void main(String[] args) {
         int noOfThreads = 5;
 

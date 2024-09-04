@@ -1,4 +1,4 @@
-package multithreading.threadcreation;
+package multithreading.threadcreation_01;
 
 import java.util.Random;
 import java.util.concurrent.Callable;
@@ -16,7 +16,7 @@ class CallableWorker implements Callable {
     }
 }
 
-public class CallableExample {
+public class App03_CallableExample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         // FutureTask is a concrete class that
         // implements both Runnable and Future
