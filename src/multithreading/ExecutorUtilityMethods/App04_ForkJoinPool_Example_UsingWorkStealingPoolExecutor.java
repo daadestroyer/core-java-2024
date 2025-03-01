@@ -3,14 +3,13 @@ package multithreading.ExecutorUtilityMethods;
 import java.util.concurrent.*;
 
 class ComputeSumTask extends RecursiveTask<Integer> {
+    // Whenever your subtask need to return anything RecursiveTask
     int start;
     int end;
-
     public ComputeSumTask(int start, int end) {
         this.start = start;
         this.end = end;
     }
-
     @Override
     protected Integer compute() {
         if (end - start <= 4) { // if there are 4 values left only then i don't need to divide further
@@ -24,21 +23,16 @@ class ComputeSumTask extends RecursiveTask<Integer> {
             int mid = (start + end) / 2;
             ComputeSumTask leftTask = new ComputeSumTask(start, mid);
             ComputeSumTask rightTask = new ComputeSumTask(mid + 1, end);
-
             // for the subtask for parallel execution
-
             leftTask.fork();
             rightTask.fork();
-
             // combine the results of subtask
             int leftRes = leftTask.join();
             int rightRes = rightTask.join();
-
             // combine the results
             return leftRes + rightRes;
         }
     }
-    // Whenever your subtask need to return anything RecursiveTask
 
 }
 
