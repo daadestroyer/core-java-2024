@@ -32,18 +32,20 @@ public class App06_DeadLock {
         Thread t2 = new Thread(() -> {
 
 
-            System.out.println(Thread.currentThread().getName() + " locked resource 2");
-            resource2.use();
-            try {
-                Thread.sleep(1000);
+           synchronized (resource2){
+               System.out.println(Thread.currentThread().getName() + " locked resource 2");
+               resource2.use();
+               try {
+                   Thread.sleep(1000);
 
-            } catch (InterruptedException e) {
+               } catch (InterruptedException e) {
 
-            }
+               }
 
-            synchronized (resource1) {
-                System.out.println(Thread.currentThread().getName() + " locked resource2");
-            }
+               synchronized (resource1) {
+                   System.out.println(Thread.currentThread().getName() + " locked resource2");
+               }
+           }
 
         }, "Thread2");
 
